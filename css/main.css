@@ -1,0 +1,74 @@
+body {
+   
+    
+    
+}
+
+.header {
+    background-color: rgb(212, 125, 11);
+    padding: 20px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: auto  auto;
+    padding : 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+    gap: 20px; 
+
+    
+  }
+
+
+.project {
+  background-image: url("../raw/Davesos.JPG");
+  background-size: cover;
+  
+  height: 50vh ;
+  
+  }
+
+  
+.hero-section{
+    height: 100vh;
+    background-image: url('../raw/main-background.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    
+ }
+
+ .project-card{
+
+ }
+ .project-card:hover {
+    
+  transform: scale(1.1); /* Scale the project on hover */
+}
+
+.main-projects{
+  min-height: 50vh;
+}
+
+ .main-text{
+  font-size: 38px;
+  color: black;
+  text-align: left;
+ }
+ .contact{
+  height: 15vh ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-clip: border-box;
+  
+ }
+

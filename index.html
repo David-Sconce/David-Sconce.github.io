@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet"  href="./css/main.css">
+    <title>Davids Portfolio</title>
+   
+</head>
+<body >
+
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;">
+        <a class="navbar-brand" href="#projects">Projects</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            
+            <a class="nav-item nav-link" href="#home">Home</a>
+            <a class="nav-item nav-link" href="#contact">Contact</a>
+           
+          </div>
+        </div>
+      </nav>
+   
+
+
+<!-- this is the main photo -->
+
+<div class="hero-section" id = "home">
+ <div >
+    <div class="main-text">
+      David Sconce
+    </div>
+
+    <div class="next-div">
+      this web page is dedicated to my personal projects.
+    </div>
+        
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<div class = "main-projects">
+  <div class="container">
+    <h1 class="text-center my-4" id = "projects">My Projects</h1>
+
+    <div class="row" id = "repeat">
+
+
+
+
+     <!--  {{range .Projects}}
+       <div class="col-md-4" >
+        <div class="card project-card" style="width: 20rem;">
+          <img src="{{.Img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">{{.Short_dis}}</p>
+            <a href="{{.Link}}" class="btn btn-primary">{{.Name}}</a>
+          </div>
+        </div>
+       </div>
+       {{end}} -->
+       
+    </div>
+ </div>
+</div>
+
+
+<br>
+<br>
+
+<div class="contact-container " id = "contact">
+  <h2 class="text-center mb-4 ">Contact</h2>
+  <div class = "contact">
+    
+  <div class="contact-links">
+    <a href="mailto:davidsconce31415@gmail.com">
+      <img src="raw/email_black_24dp.svg"/>
+      <i class="fas fa-envelope mr-2"></i>Email davidsconce31415@gmail.com
+    </a>
+    </div>
+    <!-- Add more social media links as needed -->
+  </div>
+</div>
+
+<div class = "contact">
+
+</div>
+<script >
+  window.onload = init();
+
+function init(){
+    console.log("working")
+    fetch("./raw/projects.json").then(res => res.json()).then(data => {
+      console.log("working")
+
+        renderProject(data);
+    });
+}
+
+
+function renderProject(data){
+    let container = document.getElementById("repeat");
+    console.log(data.projects);
+    for (let i =0; i < data.projects.length; i++){
+      let e  = data.projects[i]
+      console.log(e.short_dis);
+      let cardHtml = `
+    <div class="col-md-4">
+        <div class="card project-card" style="width: 20rem;">
+            <img src="${e.img}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">${e.short_dis}</p>
+                <a href="./html/${e.link}" class="btn btn-primary">${e.name}</a>
+            </div>
+        </div>
+    </div>
+`; 
+
+container.innerHTML += cardHtml;
+    }
+   
+}
+</script>
+</body>
+</html>
