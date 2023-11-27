@@ -4,16 +4,16 @@
 
         {
             "name" : "OS Dev",
-            "img" : "./raw/Davesos.JPG",
+            "img" : "/raw/Davesos.JPG",
             "short_dis" : "creating a basic 32 bit OS system",
-            "link" : "gameEngine.html"
+            "link" : "html/gameEngine.html"
             
         },
         {
             "name" : "Game Engine",
             "img" : "./raw/gameEngine.jpg",
             "short_dis" : "creating a 3D engine using a ECS (Entity Component System)",
-            "link" : "Dav's_OS.html"
+            "link" : "html/Dav's_OS.html"
             
         },
         {

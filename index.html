@@ -95,14 +95,14 @@ function renderProject(data){
     console.log(data.projects);
     for (let i =0; i < data.projects.length; i++){
       let e  = data.projects[i]
-      console.log(e.short_dis);
+     
       let cardHtml = `
     <div class="col-md-4">
         <div class="card project-card" style="width: 20rem;">
             <img src="${e.img}" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">${e.short_dis}</p>
-                <a href="./html/${e.link}" class="btn btn-primary">${e.name}</a>
+                <a href="${e.link}" class="btn btn-primary">${e.name}</a>
             </div>
         </div>
     </div>
