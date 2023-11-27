@@ -15,8 +15,13 @@
             "short_dis" : "creating a 3D engine using a ECS (Entity Component System)",
             "link" : "Dav's_OS.html"
             
+        },
+        {
+            "name" : "Basic Back-door in c",
+            "img" : "",
+            "short_dis" : "creates a reverse shell allowing the 'server' to run commands on the 'client'",
+            "link" : "https://github.com/David-Sconce/backdoor-ethical-hacking"
         }
-
        
 
 
